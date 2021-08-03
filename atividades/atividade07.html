@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Atividade 7</title>
+
+</head>
+
+<body>
+    <button> <a href="../index.html"> Voltar </a> </button> <br><br>
+    <header>Atividade 7</header>
+    <br>
+    <section>
+
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Clique Aqui!" onclick="func()">
+
+        <br> <br>
+
+        Soma dos números ímpares múltiplos de 3:
+        <br> <br>
+
+        <div id="result">
+            Preencha os dados acima para ver o resultado!
+
+        </div>
+
+    </section>
+
+    <script>
+        var res = document.getElementById('result');
+        function func() {
+            var numeros = document.getElementById("txtNumeros").value;
+            var numeros = numeros.split(",");
+
+            var vetor = [];
+
+            for (let i = 0; i < numeros.length; i++) {
+                vetor[i] = parseInt(numeros[i])
+
+            }
+
+            res.innerHTML = '';
+            test = true;
+            for (let i = 0; i < vetor.length; i++) {
+                if (Number.isInteger(vetor[i])) {
+                    test = true;
+                }
+
+                else {
+                    test = false;
+                    break;
+                }
+
+            }
+
+            if (test == true) {
+
+                res.innerHTML = somar(vetor);
+            }
+            else {
+                res.innerHTML = 'Digite apenas números!';
+            }
+
+        }
+
+        function somar(vetor) {
+            let soma = 0;
+
+            for (let i = 0; i < vetor.length; i++) {
+
+                if (vetor[i] % 2 != 0 && vetor[i] % 3 == 0) {
+                    soma+=vetor[i];
+                }
+
+            }
+            return soma;
+
+        }
+
+
+    // Desenvolva uma página HTML capaz de efetuar a soma de todos os números ímpares
+    // que são múltiplos de três e que se encontram dentro dos números inteiros (separados por vírgula)
+    // de um dado campo de entrada, a partir do click de um botão.
+
+    </script>
+
+</body>
+
+
+
+</html>

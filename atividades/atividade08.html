@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Atividade 8</title>
+
+</head>
+
+<body>
+    <button> <a href="../index.html"> Voltar </a> </button> <br><br>
+    <header>Atividade 8</header>
+    <br>
+    <section>
+
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Clique Aqui!" onclick="func()">
+
+        <br> <br>
+
+        Fatorial dos números:
+        <br> <br>
+
+        <div id="result">
+            Preencha os dados acima para ver o resultado!
+
+        </div>
+
+    </section>
+
+    <script>
+        var res = document.getElementById('result');
+        function func() {
+            var numeros = document.getElementById("txtNumeros").value;
+            var numeros = numeros.split(",");
+
+            var vetor = [];
+
+            for (let i = 0; i < numeros.length; i++) {
+                vetor[i] = parseInt(numeros[i])
+
+            }
+
+            res.innerHTML = '';
+            test = 1;
+            for (let i = 0; i < vetor.length; i++) {
+                if (Number.isInteger(vetor[i])) {
+                    test = 1;
+                }
+                else {
+                    test = 3;
+                    break;
+                }
+                if (vetor[i] < 0) {
+                    test = 2;
+                    break;
+                }
+
+            }
+
+            if (test == 1) {
+                vetorFatorial(vetor);
+                res.innerHTML = vetor;
+            }
+            else if (test == 2) {
+                res.innerHTML = 'Não existe fatorial de número negativo!';
+            }
+            else if (test == 3) {
+                res.innerHTML = 'Digite apenas números!';
+            }
+
+        }
+
+        function vetorFatorial(vetor) {
+
+
+            for (let i = 0; i < vetor.length; i++) {
+                vetor[i] = fatorial(vetor[i]);
+
+
+            }
+        }
+
+        function fatorial(num) {
+
+            if (num == 0 || num == 1) {
+                return 1;
+            }
+
+            var resultado = num;
+            var primeiroMultipicador = num - 1;
+            for (var i = primeiroMultipicador; i > 1; i--) {
+                resultado *= i;
+            }
+
+            return resultado;
+
+        }
+
+
+
+
+    // Desenvolva uma página HTML capaz de efetuar o fatorial dos números que se encontram na lista
+    // de inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.
+
+
+    </script>
+</body>
+
+</html>

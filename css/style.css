@@ -1,0 +1,53 @@
+body {
+    background: #68AFFD;
+    font: normal 14pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+    font-size: 36pt;
+    font-weight: bold;
+    padding: 15px;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.360);
+}
+
+div {
+    font: normal 14pt Arial;
+}
+
+input {
+    font: normal 12pt Arial;
+}
+
+#buttons button {
+    font: normal 14pt Arial;
+}
+
+#buttons {
+    text-align: center;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    font: normal 14pt Arial;
+    background-color: #68AFFD;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.360);
+    
+}

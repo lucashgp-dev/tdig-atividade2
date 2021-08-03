@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Atividade 10</title>
+
+</head>
+
+<body>
+    <button> <a href="../index.html"> Voltar </a> </button> <br><br>
+    <header>Atividade 10</header>
+    <br>
+    <section>
+
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Clique Aqui!" onclick="func()">
+
+        <br> <br>
+
+        Inverter os valores:
+        <br> <br>
+
+        <div id="result">
+            Preencha os dados acima para ver o resultado!
+
+        </div>
+
+    </section>
+
+
+    <script>
+        var res = document.getElementById('result');
+        function func() {
+            var numeros = document.getElementById("txtNumeros").value;
+            var numeros = numeros.split(",");
+
+            var vetor = [];
+
+            for (let i = 0; i < numeros.length; i++) {
+                vetor[i] = parseInt(numeros[i])
+
+            }
+
+            res.innerHTML = '';
+            test = true;
+            for (let i = 0; i < vetor.length; i++) {
+                if (Number.isInteger(vetor[i])) {
+                    test = true;
+                }
+
+                else {
+                    test = false;
+                    break;
+                }
+
+            }
+
+            if (test == true) {
+
+                vetor = vetor.reverse();
+                res.innerHTML = vetor;
+            }
+            else {
+                res.innerHTML = 'Digite apenas números!';
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
